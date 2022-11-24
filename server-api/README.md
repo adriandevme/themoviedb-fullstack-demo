@@ -1,4 +1,5 @@
 # Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
+
 This project was bootstrapped with Fastify-CLI.
 
 ## Available Scripts
@@ -21,3 +22,13 @@ Run the test cases.
 ## Learn More
 
 To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
+
+## Notas
+
+- Utilizo la version de got 11.8.2 porque es la unica que funciona con typescript
+
+## TODO
+
+- implementar los schemas en request/response
+- validar parametros en la entrada de la API
+- error handling on axios request
