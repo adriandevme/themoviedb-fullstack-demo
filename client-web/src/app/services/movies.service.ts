@@ -12,9 +12,7 @@ export class MoviesService {
   constructor(private apiService: ApiService) {}
 
   get(slug: string): Observable<MovieDetail> {
-    return this.apiService
-      .get(`/movie/${slug}`)
-      .pipe(map((data) => data.movie));
+    return this.apiService.get(`/movie/${slug}`).pipe(map((data) => data));
   }
   search(slug: string): Observable<MoviePreview[]> {
     return this.apiService

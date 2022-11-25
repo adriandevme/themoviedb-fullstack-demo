@@ -1,1 +1,11 @@
-<p>detail works!</p>
+<img src="{{ movieDetail?.posterPath }}" />
+<p>
+  <b>{{ movieDetail?.title }}</b>
+</p>
+<p>{{ movieDetail?.releaseDate | date }}</p>
+<p>{{ movieDetail?.voteAverage | number: "1.1-2" }}</p>
+<p>{{ movieDetail?.overview }}</p>
+<p>{{ movieDetail?.tagline }}</p>
+<p>{{ movieDetail?.revenue }}</p>
+<p>{{ movieDetail?.runtime }}</p>
+<p>{{ movieDetail?.posterPath }}</p>

@@ -19,10 +19,27 @@ export class DetailComponent implements OnInit {
   getMovieDetail(): void {
     this.moviesService.get('447404').subscribe({
       next: (data) => {
-        this.movieDetail = data;
+        this.movieDetail = this.castDetail(data);
         console.log(data);
       },
       error: (e) => console.error(e),
     });
+  }
+
+  //@WARNING toDelete
+  castDetail(data: any): MovieDetail {
+    const detail: MovieDetail = {
+      id: data.id,
+      title: data.title,
+      posterPath: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
+      releaseDate: new Date(data.release_date),
+      voteAverage: data.vote_average,
+      //Extra
+      overview: data.overview,
+      tagline: data.tagline,
+      revenue: data.revenue,
+      runtime: data.runtime,
+    };
+    return detail;
   }
 }

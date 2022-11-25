@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@fastify/autoload": "^5.0.0",
+    "@fastify/cors": "^8.2.0",
     "@fastify/sensible": "^5.0.0",
     "@types/got": "^9.6.12",
     "axios": "^1.2.0",
