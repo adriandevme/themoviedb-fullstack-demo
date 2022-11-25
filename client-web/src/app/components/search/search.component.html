@@ -13,10 +13,13 @@
 
 <!-- Resultados de la busqueda -->
 
-<mat-list>
-  <mat-list-item *ngFor="let movie of movieSearchResult; let i = index">
+<mat-action-list>
+  <mat-list-item
+    *ngFor="let movie of movieSearchResult; let i = index"
+    routerLink="/detail/{{ movie.id }}"
+  >
     <span matListItemTitle>{{ movie.title }}</span>
     <span matListItemLine>{{ movie.releaseDate | date }}</span>
     <span matListItemLine>{{ movie.voteAverage }}</span>
   </mat-list-item>
-</mat-list>
+</mat-action-list>
