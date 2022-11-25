@@ -1,7 +1,22 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Busca tu pelicula favorita</mat-label>
-    <input matInput placeholder="Ejemplo: Jack Reacher" />
-  </mat-form-field>
-  <button mat-raised-button color="primary">Buscar</button>
-</form>
+<mat-form-field class="example-full-width">
+  <mat-label>Busca tu pelicula favorita</mat-label>
+  <input
+    matInput
+    [(ngModel)]="searchString"
+    type="text"
+    placeholder="Ejemplo: Jack Reacher"
+  />
+</mat-form-field>
+<button type="button" mat-raised-button color="primary" (click)="search()">
+  Buscar
+</button>
+
+<!-- Resultados de la busqueda -->
+
+<mat-list>
+  <mat-list-item *ngFor="let movie of movieSearchResult; let i = index">
+    <span matListItemTitle>{{ movie.title }}</span>
+    <span matListItemLine>{{ movie.releaseDate | date }}</span>
+    <span matListItemLine>{{ movie.voteAverage }}</span>
+  </mat-list-item>
+</mat-list>

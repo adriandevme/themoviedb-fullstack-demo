@@ -17,7 +17,7 @@ export class MoviesService {
   search(slug: string): Observable<MoviePreview[]> {
     return this.apiService
       .get(`/movie/search/${slug}`)
-      .pipe(map((data) => data.movies));
+      .pipe(map((data) => data.results));
   }
 
   //   add(slug, payload): Observable<Comment> {
