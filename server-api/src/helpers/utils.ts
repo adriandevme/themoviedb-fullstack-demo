@@ -18,4 +18,7 @@ export const utils = {
     }
     return url.toString();
   },
+  buildTheMovieDBPosterUrl: (stub: string) => {
+    return `https://image.tmdb.org/t/p/w500${stub}`;
+  },
 };

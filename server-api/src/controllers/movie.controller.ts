@@ -38,7 +38,7 @@ export const getDetail = async (
       movieDetail = {
         id: data.id,
         title: data.title,
-        posterPath: data.poster_path,
+        posterPath: utils.buildTheMovieDBPosterUrl(data.poster_path),
         releaseDate: data.release_date,
         voteAverage: data.vote_average,
         //Extra
@@ -84,7 +84,7 @@ export const search = async (
       const moviePreview: IMoviePreview = {
         id: p.id,
         title: p.title,
-        posterPath: p.poster_path,
+        posterPath: utils.buildTheMovieDBPosterUrl(p.poster_path),
         releaseDate: p.release_date,
         voteAverage: p.vote_average,
       };
