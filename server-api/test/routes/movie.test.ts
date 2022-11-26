@@ -30,3 +30,12 @@ test("movie/search/pokemon busca correctamente", async (t) => {
   //Test
   t.same(res.payload, moviePreviewsMock);
 });
+
+test("movie/search/eeeeeeeeeee la busqueda está vacía", async (t) => {
+  const app = await build(t);
+  const res = await app.inject({
+    url: "/movie/search/eeeeeeeeeeeeeee",
+  });
+  //Test
+  t.same(res.payload, "[]");
+});
