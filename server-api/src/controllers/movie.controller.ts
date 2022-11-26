@@ -1,11 +1,8 @@
 import { FastifyRequest, FastifyReply } from "fastify";
 import got from "got";
-import { IMovieDetail, IMoviePreview } from "../interfaces";
 
-//Cargo los parametros de entorno necesarios @WARNING validate
-const movieDatabaseRootURL: string | undefined =
-  process.env.MOVIEDB_API_ROOT_URL;
-const movieDatabaseAPIKey: string | undefined = process.env.MOVIEDB_API_KEY;
+import { IMovieDetail, IMoviePreview } from "../interfaces";
+import { utils } from "../helpers/utils";
 
 //Extrae el detalle de una pelicula desde su ID
 export const getDetail = async (
@@ -17,9 +14,9 @@ export const getDetail = async (
   reply: FastifyReply
 ) => {
   const movieId = request.params.movieId;
-  const url: string = `${movieDatabaseRootURL}/movie/${movieId}?api_key=${movieDatabaseAPIKey}`;
+  const url: string = utils.buildTheMovieDBURL(`movie/${movieId}`);
   const data: any = await got.get(url, {}).json();
-  //Parseamos el objeto detail
+  //Parsea la respuesta
   const movieDetail: IMovieDetail = {
     id: data.id,
     title: data.title,
@@ -45,9 +42,16 @@ export const search = async (
   }>,
   reply: FastifyReply
 ) => {
+  //Prepara las variables
   const searchString = request.params.searchString;
-  const url: string = `${movieDatabaseRootURL}/search/movie?api_key=${movieDatabaseAPIKey}&query=${searchString}`;
+  const url: string = utils.buildTheMovieDBURL(
+    `search/movie`,
+    "query",
+    searchString
+  );
+  //Hace la peticion
   const data: any = await got.get(url, {}).json();
+  //Parsea la respuesta
   const moviePreviews: IMoviePreview[] = data.results.map((p: any) => {
     const moviePreview: IMoviePreview = {
       id: p.id,
@@ -58,5 +62,6 @@ export const search = async (
     };
     return moviePreview;
   });
+  //Return
   return moviePreviews;
 };
