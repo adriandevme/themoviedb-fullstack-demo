@@ -7,7 +7,6 @@ const cacheEnabled: boolean =
 export default fp<FastifyCachingPluginOptions>(async (fastify) => {
   // Activo desde el fichero .env
   const noCache: string | undefined = cacheEnabled ? "no-cache" : undefined;
-  console.log(noCache);
   const cachingOptions: FastifyCachingPluginOptions = {
     privacy: noCache,
   };
