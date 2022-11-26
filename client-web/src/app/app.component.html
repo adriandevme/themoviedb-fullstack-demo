@@ -1,6 +1,11 @@
-<p>
-  <mat-toolbar color="primary">
-    <span>Movie Database</span>
-  </mat-toolbar>
-</p>
+<app-header></app-header>
+<div class="loading" *ngIf="loading">
+  <mat-progress-bar
+    [color]="color"
+    [mode]="mode"
+    [value]="value"
+  ></mat-progress-bar>
+</div>
+
 <router-outlet></router-outlet>
+<app-footer></app-footer>
