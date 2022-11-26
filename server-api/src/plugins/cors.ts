@@ -6,6 +6,5 @@ export default fp<FastifyCorsOptions>(async (fastify) => {
     // This is NOT recommended for production as it enables reflection exploits
     origin: true,
   };
-  console.log("Registering fastify CORS plugin");
   fastify.register(cors, corsOptions);
 });
