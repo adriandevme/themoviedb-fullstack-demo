@@ -10,7 +10,7 @@ import { MoviesService } from '../../services/movies.service';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-  movieDetail?: MovieDetail;
+  movie?: MovieDetail;
 
   constructor(
     private moviesService: MoviesService,
@@ -27,7 +27,7 @@ export class DetailComponent implements OnInit {
     this.moviesService.get(movieId).subscribe({
       next: (data) => {
         console.log(data);
-        this.movieDetail = data as MovieDetail;
+        this.movie = data as MovieDetail;
       },
       error: (e) => console.error(e),
     });

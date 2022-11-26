@@ -19,7 +19,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { SidebarModule } from 'primeng/sidebar';
+import { CarouselModule } from 'primeng/carousel';
+
+import { PipeModule } from './pipe/pipe.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { SidebarModule } from 'primeng/sidebar';
     MatButtonModule,
     MatListModule,
     MatProgressBarModule,
+    MatTabsModule,
     SidebarModule,
+    CarouselModule,
+
+    PipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
