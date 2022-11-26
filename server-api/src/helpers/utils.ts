@@ -16,8 +16,6 @@ export const utils = {
       //let params = new URLSearchParams(url.search);
       url.searchParams.append(paramKey, paramValue);
     }
-    console.log(url.toString());
-    console.log("-------------------------------");
     return url.toString();
   },
 };

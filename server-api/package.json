@@ -27,10 +27,12 @@
     "fastify-cli": "^5.6.0",
     "fastify-plugin": "^4.0.0",
     "fluent-json-schema": "^4.0.0",
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
+    "@types/node-fetch": "^2.6.2",
     "@types/tap": "^15.0.5",
     "concurrently": "^7.0.0",
     "fastify-tsconfig": "^1.0.1",

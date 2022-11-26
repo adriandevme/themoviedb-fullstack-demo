@@ -1,6 +1,4 @@
 import { test } from "tap";
-//import { IMovieDetail } from "../../src/interfaces";
-//import { IMovieDetail } from "../../src/interfaces";
 import { build } from "../helper";
 
 import movieDetailMock from "../_mocks/movieDetail447404.mock";
@@ -13,6 +11,15 @@ test("movie/447404 carga correctamente", async (t) => {
   });
   //Test
   t.same(res.payload, movieDetailMock);
+});
+
+test("movie/eeee no encuenta la pelicula", async (t) => {
+  const app = await build(t);
+  const res = await app.inject({
+    url: "/movie/eeee",
+  });
+  //Test
+  t.same(JSON.parse(res.payload).statusCode, 404);
 });
 
 test("movie/search/pokemon busca correctamente", async (t) => {
