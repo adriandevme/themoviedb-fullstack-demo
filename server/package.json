@@ -1,5 +1,5 @@
 {
-  "name": "server-api",
+  "name": "themoviedb-fullstack-demo-server",
   "version": "1.0.0",
   "description": "This project was bootstrapped with Fastify-CLI.",
   "main": "app.ts",
