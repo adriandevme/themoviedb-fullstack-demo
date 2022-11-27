@@ -1,34 +1,25 @@
-# Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
+# Server The Movie Database
 
-This project was bootstrapped with Fastify-CLI.
+Aplicación servidora del proyecto TheMovieDB Fullstack Demo
+Este proyecto se ha generado con Fastify-CLI.
 
-## Available Scripts
+## Inicio rápido
 
-In the project directory, you can run:
+La aplicación requiere de un fichero `.env` en el directorio raiz. Puedes tomar como referencia el fichero `.env.sample`
+
+## Scripts disponbiles
+
+En la carpeta del proyecto, puedes ejecutar
 
 ### `npm run dev`
 
-To start the app in dev mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para inciiar la app en modo desarrollo.\
+Abre [http://localhost:3000](http://localhost:3000) para visualizarlo en el navegador.
 
 ### `npm start`
 
-For production mode
+Para modo producción
 
 ### `npm run test`
 
-Run the test cases.
-
-## Learn More
-
-To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
-
-## Notas
-
-- Utilizo la version de got 11.8.2 porque es la unica que funciona con typescript
-
-## TODO
-
-- implementar los schemas en request/response
-- validar parametros en la entrada de la API
-- error handling on axios request
+Para ejecutar los test intarios
