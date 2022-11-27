@@ -11,7 +11,7 @@ import { MoviePreview } from 'src/app/models';
 export class SearchComponent implements OnInit {
   topRated: any;
   responsiveOptions;
-  loader = true;
+  loader = false;
   totalResults: any;
   total_results: any;
   searchRes: MoviePreview[] = [];
@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchMovies();
+    //this.searchMovies();
   }
 
   searchMovies() {

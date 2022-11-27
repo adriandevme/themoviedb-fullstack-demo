@@ -21,4 +21,7 @@ export const utils = {
   buildTheMovieDBPosterUrl: (stub: string) => {
     if (stub) return `https://image.tmdb.org/t/p/w500${stub}`;
   },
+  buildTheMovieDBBackdropUrl: (stub: string) => {
+    if (stub) return `https://image.tmdb.org/t/p/original/${stub}`;
+  },
 };

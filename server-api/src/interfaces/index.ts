@@ -13,6 +13,7 @@ export interface IMovieDetail {
   releaseDate?: Date;
   voteAverage?: number;
   //Extra
+  backdropPath?: string;
   overview?: string;
   tagline?: string;
   revenue?: number;

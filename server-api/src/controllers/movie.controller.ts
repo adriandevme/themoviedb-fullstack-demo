@@ -42,6 +42,7 @@ export const getDetail = async (
         releaseDate: data.release_date,
         voteAverage: data.vote_average,
         //Extra
+        backdropPath: utils.buildTheMovieDBBackdropUrl(data.backdrop_path),
         overview: data.overview,
         tagline: data.tagline,
         revenue: data.revenue,
