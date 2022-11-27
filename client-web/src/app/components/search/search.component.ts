@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   total_results: any;
   searchRes: MoviePreview[] = [];
   searchStr: string = 'pokemon';
+  searchError: boolean = false;
 
   constructor(private movieService: MoviesService) {
     this.responsiveOptions = [
@@ -62,10 +63,18 @@ export class SearchComponent implements OnInit {
 
   searchMovies() {
     console.log('searching movies...');
-    this.movieService.search(this.searchStr).subscribe((res) => {
-      this.searchRes = res;
-      this.loader = false;
-      console.log(this.searchRes);
+    this.searchError = false;
+    this.loader = true;
+    this.movieService.search(this.searchStr).subscribe({
+      next: (data) => {
+        this.searchRes = data;
+        this.loader = false;
+      },
+      error: (e) => {
+        console.error('Error buscando peliculas', e);
+        this.searchError = true;
+        this.loader = false;
+      },
     });
   }
 }
