@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   totalResults: any;
   total_results: any;
   searchRes: MoviePreview[] = [];
-  searchStr: string = 'pokemon';
+  searchStr: string = '';
   searchError: boolean = false;
 
   constructor(private movieService: MoviesService) {
@@ -41,25 +41,6 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.searchMovies();
   }
-
-  // getTopRatedMovies(page: number) {
-  //   this.movieService
-  //     .getTopRatedMovies(page)
-  //     .pipe(delay(2000))
-  //     .subscribe(
-  //       (res: any) => {
-  //         this.topRated = res.results;
-  //         this.totalResults = res.total_results;
-  //         this.loader = false;
-  //       },
-  //       (error) => console.log(error)
-  //     );
-  // }
-
-  // changePage(event: any) {
-  //   this.loader = true;
-  //   this.getTopRatedMovies(event.pageIndex + 1);
-  // }
 
   searchMovies() {
     console.log('searching movies...');
