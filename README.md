@@ -25,8 +25,9 @@ Para mas detalles de como correr test, ejecutar en modo desarrollo, etc, ver los
 
 ## Decisiones de diseño
 
-- Porque el proxy
-- Para el control de la cache
-- El plugin de CORS
-- Test unitarios y no e2e
-- Integracion JWT
+- El servidor utiliza la librería [Fastify](https://github.com/fastify/fastify) debido a que su uso está orientado a APIs, además de tener plena compatibilidad con Typescript.
+- De cara a tener mayor flexibilidad de cara a posibles refactorizaciones, utiliza la libreria [node-fetch](https://github.com/node-fetch/node-fetch) en el servidor para realizar las llamadas a la API y tratar los objetos, en lugar de usar un plugin como [@fastify/reply-from](https://github.com/fastify/fastify-reply-from) para que haga de proxy completo.
+- El servidor utiliza el plguin [@fastify/caching](https://github.com/fastify/fastify-caching) , que permite deshabilitar la cache como ejemplo. Esto permite gestionar la politica de cache del cliente desde el servidor.
+- El servidor permite habilitar el uso de CORS para todas las rutas mediante el plugin [@fastify/cors](https://github.com/fastify/fastify-cors). Configurable por parametro
+- Tanto la aplicacion servidora como el cliente contienen diferentes test unitarios. Puesto que es un proyecto demo, no hay implementados ningún test de integración.
+- Ya que no hay gestión de usuarios ni login, la solución no incluye securización de ningun tipo. Podría implementarse mediante [autenticacion JWT](https://jwt.io/introduction) fácilmente con plugins como [@auth0/angular-jwt](https://www.npmjs.com/package/@auth0/angular-jwt) y [@fastify/jwt](https://github.com/fastify/fastify-jwt)
